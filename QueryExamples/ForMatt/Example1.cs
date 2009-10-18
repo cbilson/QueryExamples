@@ -55,9 +55,6 @@ ON A.Sedol = B.Sedol AND A.ValuationDate = B.ValuationDate
                 .SetProjection(Projections.Max("ValuationDate"))         
                 .Add(Restrictions.EqProperty("B.Sedol", "A.Sedol"));
 
-            session.CreateSQLQuery("drop table UnitPrices").ExecuteUpdate();
-
-
             return session.CreateCriteria<UnitPrice>("A")
                 .Add(Subqueries.PropertyEq("ValuationDate", latestForSedol))
                 .List<UnitPrice>();
