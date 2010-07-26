@@ -8,6 +8,8 @@ properties {
   $build_artifacts_dir = Join-Path $build_dir "Build"
 }
 
+FormatTaskName (("-"*25) + "[{0}]" + ("-"*25))
+
 task default -depends Clean, Build
 
 task Clean {
