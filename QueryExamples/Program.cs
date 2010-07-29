@@ -1,4 +1,5 @@
 ﻿using System;
+using QueryExamples.ReallyReallyComplicatedExample;
 
 namespace QueryExamples {
     class Program {
@@ -8,7 +9,8 @@ namespace QueryExamples {
             HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
 
             try {
-                new ForMatt.Example1().Run();
+          //      new ForMatt.Example1().Run();
+                new ComplexExample().Run();
             } catch (Exception ex) {
                 Console.Error.WriteLine(ex.ToString());
             }

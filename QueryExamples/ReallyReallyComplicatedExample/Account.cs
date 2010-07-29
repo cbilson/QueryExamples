@@ -21,12 +21,12 @@ namespace QueryExamples.ReallyReallyComplicatedExample
     }
 
     [Migration(2)]
-    public class CreateAccountTable : Migration
+    public class create_account_table : Migration
     {
         public override void Up()
         {
             Create.Table("Account")
-                .WithColumn("ID").AsInt32().PrimaryKey().Identity().NotNullable()
+                .WithColumn("ID").AsInt32().PrimaryKey().Identity()
                 .WithColumn("Name").AsString(50).NotNullable()
                 .WithColumn("AccountNumber").AsString(50).NotNullable();
         }
@@ -36,6 +36,4 @@ namespace QueryExamples.ReallyReallyComplicatedExample
             Delete.Table("Account");
         }
     }
-
-
 }
