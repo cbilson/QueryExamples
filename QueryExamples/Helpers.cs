@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using FluentMigrator;
 using FluentMigrator.Runner;
 using FluentMigrator.Runner.Processors;
@@ -8,6 +9,11 @@ using NHibernate;
 
 namespace QueryExamples {
     public static class Helpers {
+
+      public static void Each<T>(this IEnumerable<T> xs, Action<T> f) {
+        foreach (var x in xs)
+          f(x);
+      }
 
         public static void CreateDatabase(string migrationsNamespace) {
 

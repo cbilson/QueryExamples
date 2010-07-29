@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using FluentNHibernate.Cfg;
 using NHibernate;
 using NHibernate.Criterion;
-using Ris.Common;
 
 namespace QueryExamples.ForMatt {
     class Example1 {

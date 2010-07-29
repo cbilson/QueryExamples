@@ -1,7 +1,6 @@
 using System;
 using FluentMigrator;
 using FluentNHibernate.Mapping;
-using Ris.Common;
 
 namespace QueryExamples.ReallyReallyComplicatedExample
 {
