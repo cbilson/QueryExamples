@@ -35,7 +35,7 @@ namespace QueryExamples {
             Console.WriteLine("Opening session");
 
             return Fluently.Configure()
-                .Database(SQLiteConfiguration.Standard.UsingFile("Data.db"))
+              .Database(SQLiteConfiguration.Standard.UsingFile("Data.db").AdoNetBatchSize(500))
                 .Mappings(mappings)
                 .BuildSessionFactory()
                 .OpenSession();
