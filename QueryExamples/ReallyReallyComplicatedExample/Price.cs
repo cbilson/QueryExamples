@@ -101,7 +101,7 @@ namespace QueryExamples.ReallyReallyComplicatedExample
         {
             Create.Table("Price")
                 .WithColumn("ID").AsInt32().PrimaryKey().Identity()
-                .WithColumn("SecurityID").AsInt32().NotNullable()
+                .WithColumn("Security_id").AsInt32().NotNullable()
                 .WithColumn("EffectiveDate").AsDate().NotNullable()
                 .WithColumn("Type").AsString(50).NotNullable()
                 .WithColumn("Price_Amount").AsDecimal(15, 2).Nullable()
@@ -110,9 +110,8 @@ namespace QueryExamples.ReallyReallyComplicatedExample
                 .WithColumn("Time").AsTime().Nullable();
 
             Create.ForeignKey("FK_Price_Security")
-                .FromTable("Price").ForeignColumn("SecurityID")
-                .ToTable("Security").PrimaryColumn("SecurityID");
-
+                .FromTable("Price").ForeignColumn("Security_id")
+                .ToTable("Security").PrimaryColumn("ID");
         }
 
         public override void Down()

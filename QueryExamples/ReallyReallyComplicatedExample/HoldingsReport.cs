@@ -31,11 +31,11 @@ namespace QueryExamples.ReallyReallyComplicatedExample
         {
             Create.Table("HoldingsReport")
                 .WithColumn("ID").AsInt32().PrimaryKey().Identity()
-                .WithColumn("AccountID").AsInt32().NotNullable()
+                .WithColumn("Account_id").AsInt32().NotNullable()
                 .WithColumn("EffectiveDate").AsDate().NotNullable();
 
             Create.ForeignKey("FK_HoldingsReport_Account")
-                .FromTable("HoldingsReport").ForeignColumn("AccountID")
+                .FromTable("HoldingsReport").ForeignColumn("Account_id")
                 .ToTable("Account").PrimaryColumn("ID");
         }
 
@@ -47,3 +47,4 @@ namespace QueryExamples.ReallyReallyComplicatedExample
         }
     }
 }
+
