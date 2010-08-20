@@ -24,8 +24,9 @@ namespace QueryExamples {
 
             var conventions = new MigrationConventions();
             var runner = new MigrationVersionRunner(conventions, processor,
-                new MigrationLoader(conventions), typeof(Helpers).Assembly,
-                migrationsNamespace);
+                                                    new MigrationLoader(conventions), 
+                                                    typeof(Helpers).Assembly,
+                                                    migrationsNamespace);
 
             runner.MigrateUp();
         }
@@ -35,7 +36,7 @@ namespace QueryExamples {
             Console.WriteLine("Opening session");
 
             return Fluently.Configure()
-              .Database(SQLiteConfiguration.Standard.UsingFile("Data.db").AdoNetBatchSize(500))
+                .Database(SQLiteConfiguration.Standard.UsingFile("Data.db").AdoNetBatchSize(500))
                 .Mappings(mappings)
                 .BuildSessionFactory()
                 .OpenSession();

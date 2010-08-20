@@ -7,6 +7,11 @@ namespace QueryExamples.ReallyReallyComplicatedExample
 {
     public class HoldingsReport
     {
+        public HoldingsReport()
+        {
+            Positions = new List<Position>();
+        }
+
         public virtual int ID { get; set; }
         public virtual Account Account { get; set; }
         public virtual DateTime EffectiveDate { get; set; }

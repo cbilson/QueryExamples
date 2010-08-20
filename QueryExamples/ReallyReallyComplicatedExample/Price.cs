@@ -34,8 +34,8 @@ namespace QueryExamples.ReallyReallyComplicatedExample
         {
             Component(x => x.Price, m =>
             {
-                m.Map(money => money.Amount);
-                m.Map(money => money.CurrencyCode);
+                m.Map(money => money.Amount, "Price_Amount");
+                m.Map(money => money.CurrencyCode, "Price_CurrencyCode");
             });
         }
     }
@@ -99,7 +99,7 @@ namespace QueryExamples.ReallyReallyComplicatedExample
     {
         public override void Up()
         {
-            Create.Table("Price")
+            Create.Table("PriceQuote")
                 .WithColumn("ID").AsInt32().PrimaryKey().Identity()
                 .WithColumn("Security_id").AsInt32().NotNullable()
                 .WithColumn("EffectiveDate").AsDate().NotNullable()
@@ -109,16 +109,16 @@ namespace QueryExamples.ReallyReallyComplicatedExample
                 .WithColumn("Discount").AsDecimal(15, 12).Nullable()
                 .WithColumn("Time").AsTime().Nullable();
 
-            Create.ForeignKey("FK_Price_Security")
-                .FromTable("Price").ForeignColumn("Security_id")
+            Create.ForeignKey("FK_PriceQuote_Security")
+                .FromTable("PriceQuote").ForeignColumn("Security_id")
                 .ToTable("Security").PrimaryColumn("ID");
         }
 
         public override void Down()
         {
-            Delete.ForeignKey("FK_Price_Security");
+            Delete.ForeignKey("FK_PriceQuote_Security");
 
-            Delete.Table("Price");
+            Delete.Table("PriceQuote");
         }
     }
 }

@@ -31,7 +31,8 @@ namespace QueryExamples.ReallyReallyComplicatedExample
             Create.Table("Position")
                 .WithColumn("ID").AsInt32().PrimaryKey().Identity()
                 .WithColumn("HoldingsReport_id").AsInt32().NotNullable()
-                .WithColumn("Security_id").AsInt32().NotNullable();
+                .WithColumn("Security_id").AsInt32().NotNullable()
+                .WithColumn("Quantity").AsDecimal().NotNullable();
 
             Create.ForeignKey("FK_Position_HoldingsReport")
                 .FromTable("Position").ForeignColumn("HoldingsReport_id")
