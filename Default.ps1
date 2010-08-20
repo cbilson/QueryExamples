@@ -30,3 +30,13 @@ task Build {
                                 /p:OutDir="$build_artifacts_dir\" `
                                 /v:$msbuild_verbosity }
 }
+
+task UpdateLibs -depends CheckForNu {
+  Exec { nu }
+}
+
+task CheckForNu {
+  if (-not (Get-Command nu -ErrorAction SilentlyContinue)) {
+      Write-Host "You need to install the nu gem: http://groups.google.com/group/nu-net"
+  }
+}
