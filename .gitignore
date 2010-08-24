@@ -7,11 +7,14 @@ obj
 bin
 lib/castle.core/
 lib/castle.dynamicproxy2/
+lib/castle.windsor
 lib/fluentmigrator/
 lib/fluentnhibernate/
 lib/log4net/
 lib/nbuilder/
 lib/nhibernate/
+lib/nlog
+lib/rhino.mocks
 *~
 *.swp
 _ReSharper*
