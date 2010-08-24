@@ -5,7 +5,6 @@
 *.log.*
 obj
 bin
-lib
 ThirdParty/Castle/*.xml
 ThirdParty/Castle/*.XML
 ThirdParty/NHibernate/trunk
