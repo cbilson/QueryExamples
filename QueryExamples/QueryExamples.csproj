@@ -56,7 +56,7 @@
       <HintPath>..\lib\Castle.DynamicProxy2.dll</HintPath>
     </Reference>
     <Reference Include="FizzWare.NBuilder">
-      <HintPath>..\lib\FizzWare.NBuilder.dll</HintPath>
+      <HintPath>..\lib\nbuilder\FizzWare.NBuilder.dll</HintPath>
     </Reference>
     <Reference Include="FluentMigrator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

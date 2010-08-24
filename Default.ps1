@@ -6,6 +6,8 @@ properties {
   $build_dir = Split-Path $psake.build_script_file
   $solution_file = Join-Path $build_dir "$project_name.sln"
   $build_artifacts_dir = Join-Path $build_dir "Build"
+  $libs = @('nbuilder', 'fluentnhibernate', 'nhibernate', 'castle.dynamicproxy2', 
+            'fluentmigrator', 'log4net')
 }
 
 FormatTaskName (("-"*25) + "[{0}]" + ("-"*25))
@@ -32,7 +34,7 @@ task Build {
 }
 
 task UpdateLibs -depends CheckForNu {
-  Exec { nu }
+  $libs | ForEach-Object { nu install $_ }
 }
 
 task CheckForNu {
