@@ -55,11 +55,14 @@
       <HintPath>..\lib\nhibernate\Required_Bins\Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core">
-      <HintPath>..\lib\castle.core\Castle.Core.dll</HintPath>
+      <HintPath>..\lib\castle.core\net-35\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\castle.dynamicproxy2\net-3.5\Castle.DynamicProxy2.dll</HintPath>
+      <HintPath>..\lib\castle.dynamicproxy2\net-35\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.log4netIntegration">
+      <HintPath>..\lib\castle.core\net-35\Castle.Services.Logging.log4netIntegration.dll</HintPath>
     </Reference>
     <Reference Include="FizzWare.NBuilder">
       <HintPath>..\lib\nbuilder\FizzWare.NBuilder.dll</HintPath>
@@ -127,6 +130,9 @@
     <Compile Include="ReallyReallyComplicatedExample\Security.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="sqlite3.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
